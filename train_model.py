@@ -26,11 +26,7 @@ gbc.fit(Xtrain, Ytrain)
 joblib.dump(gbc, "breastCancerTrainedModel.pkl")
 
 errorRate = mean_absolute_error(Ytrain, gbc.predict(Xtrain))
-print("Training Date:", errorRate)
+print("Training Data Error Rate:", errorRate)
 
 errorRate = mean_absolute_error(Ytest, gbc.predict(Xtest))
-print("Test Date:", errorRate)
-
-test = [Xtest.iloc[0]]
-print("Prediction: ", gbc.predict(test)[0])
-print("Actual:", Ytest.iloc[0])
+print("Test Data Error Rate:", errorRate)
